@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="836.0" prefWidth="1186.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Customer_MenuController">
+   <children>
+      <Button layoutX="220.0" layoutY="712.0" mnemonicParsing="false" onAction="#onActionGoHome" prefHeight="102.0" prefWidth="102.0" style="-fx-background-color: #DAF7A6;" text="Go Home" textAlignment="CENTER" textFill="LIGHTSLATEGRAY" wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="1015.0" layoutY="350.0" mnemonicParsing="false" onAction="#onActionSaveCust" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #DAF7A6;" text="Save" textAlignment="CENTER" textFill="LIGHTSLATEGRAY" wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="176.0" layoutY="7.0" prefHeight="35.0" prefWidth="252.0" text="Customers" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="customerTbl" layoutX="195.0" layoutY="108.0" prefHeight="222.0" prefWidth="953.0">
+         <columns>
+            <TableColumn fx:id="customerIDCol" prefWidth="90.0" text="Customer ID" />
+            <TableColumn fx:id="custFNameCol" prefWidth="195.0" text="Full Name" />
+            <TableColumn fx:id="custPhNumberCol" minWidth="0.0" prefWidth="203.0" text="Phone Number" />
+            <TableColumn fx:id="custAddressCol" prefWidth="229.5" text="Address" />
+            <TableColumn fx:id="fldCol" prefWidth="189.0" text="First Level Division" />
+         </columns>
+      </TableView>
+      <GridPane hgap="10.0" layoutX="195.0" layoutY="350.0" prefHeight="136.0" prefWidth="731.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="94.66665649414062" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="257.6666259765625" minWidth="10.0" prefWidth="190.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.16668701171875" minWidth="10.0" prefWidth="75.5" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="343.5" minWidth="10.0" prefWidth="343.5" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Full Name" GridPane.halignment="RIGHT" />
+            <Label text="Phone Number" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="Country" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="54.0" text="Address" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+            <Label text="State" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="Zip Code" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <TextField fx:id="custFNameTxt" prefHeight="25.0" prefWidth="167.0" GridPane.columnIndex="1" />
+            <TextField fx:id="CustPhNumberTxt" prefHeight="25.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="custAddressTxt" prefHeight="25.0" prefWidth="226.0" GridPane.columnIndex="3" />
+            <TextField fx:id="custZipTxt" prefHeight="25.0" prefWidth="226.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ComboBox fx:id="countryCB" onAction="#onActionCountry" prefHeight="25.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="stateCB" prefHeight="25.0" prefWidth="223.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TableView fx:id="custApptsTbl" layoutX="206.0" layoutY="530.0" prefHeight="164.0" prefWidth="953.0">
+         <columns>
+            <TableColumn fx:id="apptIDCol" prefWidth="68.0" text="Appt. ID" />
+            <TableColumn fx:id="apptTitleCol" minWidth="0.0" prefWidth="118.5" text="Title" />
+            <TableColumn fx:id="startDateCol" prefWidth="87.0" text="Start Date" />
+            <TableColumn fx:id="startTimeCol" prefWidth="105.0" text="Start Time" />
+            <TableColumn fx:id="endTimeCol" minWidth="0.0" prefWidth="118.5" text="End Time" />
+            <TableColumn fx:id="apptTypeCol" minWidth="0.0" prefWidth="191.5" text="Type" />
+            <TableColumn fx:id="apptContactCol" prefWidth="159.5" text="Contact" />
+         </columns>
+      </TableView>
+      <Button layoutX="1096.0" layoutY="350.0" mnemonicParsing="false" onAction="#onActionDeleteUser" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #DAF7A6;" text="Delete User" textAlignment="CENTER" textFill="LIGHTSLATEGRAY" wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="926.0" layoutY="418.0" prefHeight="17.0" prefWidth="260.0" text="** Deleting user will delete all appointments" />
+      <Button layoutX="1096.0" layoutY="700.0" mnemonicParsing="false" onAction="#onActionDeleteAppt" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #DAF7A6;" text="Delete Appointment" textAlignment="CENTER" textFill="LIGHTSLATEGRAY" wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="8.0" />
+         </font>
+      </Button>
+      <Button layoutX="1015.0" layoutY="700.0" mnemonicParsing="false" onAction="#onActionUpdateAppt" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #DAF7A6;" text="Update Appointment" textAlignment="CENTER" textFill="LIGHTSLATEGRAY" wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="8.0" />
+         </font>
+      </Button>
+      <VBox layoutY="-1.0" prefHeight="838.0" prefWidth="176.0" style="-fx-background-color: #778899;">
+         <children>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionHome" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionAppointments" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Appointments" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionCustomers" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Customers" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionContacts" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Contacts" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionReports" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Reports" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionLogout" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2.5;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Button layoutX="926.0" layoutY="350.0" mnemonicParsing="false" onAction="#onActionAddCust" prefHeight="63.0" prefWidth="63.0" style="-fx-background-color: #DAF7A6;" text="Add New" textAlignment="CENTER" textFill="LIGHTSLATEGRAY" wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER_LEFT" layoutX="205.0" layoutY="76.0" prefHeight="31.0" prefWidth="419.0" spacing="10.0">
+         <children>
+            <Label alignment="BASELINE_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="103.0" text="Search by Name" textAlignment="RIGHT" />
+            <TextField fx:id="searchTxt" />
+            <Button mnemonicParsing="false" onAction="#onActionSearch" prefHeight="25.0" prefWidth="56.0" text="Search" />
+            <Button mnemonicParsing="false" onAction="#onActionClearSearch" prefHeight="25.0" prefWidth="56.0" text="Clear" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

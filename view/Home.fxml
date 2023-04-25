@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="836.0" prefWidth="1186.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+   <children>
+      <Pane layoutX="200.0" layoutY="14.0" prefHeight="49.0" prefWidth="909.0">
+         <children>
+            <Label alignment="CENTER" layoutX="189.0" layoutY="7.0" prefHeight="35.0" prefWidth="494.0" text="Upcoming Appointments">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+            <TableView fx:id="userApptTbl" layoutX="25.0" layoutY="59.0" prefHeight="164.0" prefWidth="903.0">
+               <columns>
+                  <TableColumn fx:id="apptIDCol" prefWidth="54.0" text="Appt ID" />
+                  <TableColumn fx:id="apptTitleCol" minWidth="0.0" prefWidth="189.66668701171875" text="Title" />
+                  <TableColumn fx:id="startDateCol" prefWidth="122.16668701171875" text="Start Date" />
+                  <TableColumn fx:id="startTimeCol" prefWidth="76.83331298828125" text="Start Time " />
+                  <TableColumn fx:id="endTimeCol" prefWidth="87.1666259765625" text="End Time" />
+                  <TableColumn fx:id="apptTypeCol" minWidth="0.0" prefWidth="155.8333740234375" text="Type" />
+                  <TableColumn fx:id="apptContactCol" prefWidth="265.5" text="Contact" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="329.0" layoutY="380.0" prefHeight="467.0" prefWidth="761.0">
+         <children>
+            <Label alignment="CENTER" layoutX="140.0" prefHeight="35.0" prefWidth="494.0" text="Book Appointment" wrapText="true">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="69.0" layoutY="52.0" prefHeight="365.0" prefWidth="624.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.5" minWidth="10.0" prefWidth="156.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="156.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.5" minWidth="0.0" prefWidth="156.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="156.0" minHeight="0.0" prefHeight="156.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionBookGroup" prefHeight="81.0" prefWidth="81.0" style="-fx-background-color: #778899;" text="Group Lessons" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionBookWriting" prefHeight="81.0" prefWidth="81.0" style="-fx-background-color: #778899;" text="Writing Lessons" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionBookSing" prefHeight="81.0" prefWidth="81.0" style="-fx-background-color: #778899;" text="Singing Lesson" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionBookUkelele" prefHeight="81.0" prefWidth="81.0" style="-fx-background-color: #778899;" text="Mega Ukelele Lesson" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionBookOther" prefHeight="81.0" prefWidth="81.0" style="-fx-background-color: #778899;" text="Other" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionBookDJ" prefHeight="81.0" prefWidth="81.0" style="-fx-background-color: #778899;" text="DJ Lessons" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionBookPiano" prefHeight="140.0" prefWidth="140.0" style="-fx-background-color: #778899;" text="Piano Lesson" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="140.0" maxWidth="140.0" mnemonicParsing="false" onAction="#onActionModifyAppt" prefHeight="80.0" prefWidth="91.0" style="-fx-background-color: #DAF7A6;" text="Modify Appointment" textAlignment="CENTER" textFill="LIGHTSLATEGRAY" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <VBox layoutY="-1.0" prefHeight="838.0" prefWidth="176.0" style="-fx-background-color: #778899;">
+         <children>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionHome" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionAppointments" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Appointments" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionCustomers" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Customers" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionContacts" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Contacts" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionReports" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2;" text="Reports" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onActionLogout" prefHeight="42.0" prefWidth="175.0" style="-fx-background-color: #778899; -fx-border-color: #DAF7A6; -fx-border-width: 2.5;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <ListView fx:id="apptAlertlv" layoutX="229.0" layoutY="243.0" prefHeight="69.0" prefWidth="399.0" />
+   </children>
+</AnchorPane>
